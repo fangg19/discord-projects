@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;700&display=swap');
+$bg-color: #1d2029;
+$card-color: #252b43;
+$card-active-color: #333a56;
+$green-color: #3dbea8;
+$red-color: #c4032b;
+$contrast-font: #ccc;
+$light-font: #9299bc;
+$default-padding: 60px 300px;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $bg-color;
+  color: $contrast-font;
+}
+
+.top {
+  padding: 60px 300px 0;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    color: $light-font;
+    font-weight: bold;
+  }
+
+  .toggle-button {
+    display: flex;
+    align-items: center;
+    p {
+      padding: 0 15px;
+    }
+    .switch {
+      position: relative;
+      display: block;
+      width: 63px;
+      height: 30px;
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(60deg, rgb(30, 63, 94), rgb(8, 211, 160));
+        border-radius: 50px;
+        transition: 0.5s;
+
+        &:before {
+          position: absolute;
+          content: '';
+          // bottom: 14px;
+          top: 2px;
+          left: 3px;
+          background-color: $bg-color;
+          transition: 0.5s;
+        }
+
+        &.round:before {
+          width: 26px;
+          height: 26px;
+          border-radius: 50px;
+        }
+      }
+
+      input {
+        display: none;
+        &:checked + .slider {
+          background: linear-gradient(
+            -60deg,
+            rgb(30, 63, 94),
+            rgb(8, 211, 160)
+          );
+        }
+        &:checked + .slider:before {
+          transform: translateX(31px);
+        }
+      }
+    }
+  }
+}
+
+.cards-container {
+  padding: $default-padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .card {
+    background-color: $card-color;
+    // padding: 0px 60px;
+    width: 300px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    &:hover {
+      background-color: $card-active-color;
+      cursor: pointer;
+    }
+
+    &.fb {
+      border-top: 3px solid #178ff5;
+    }
+    &.tw {
+      border-top: 3px solid #1da1f2;
+    }
+    &.ig {
+      // Can I add radius to a gradient border ?
+      border-top: 3px solid;
+      border-image: linear-gradient(
+          90deg,
+          rgb(248, 233, 100),
+          rgb(209, 34, 180)
+        )
+        1;
+    }
+    &.yt {
+      border-top: 3px solid #c4032b;
+      .growth {
+        color: $red-color;
+      }
+    }
+    .social-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 20px 0;
+
+      p {
+        color: $light-font;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0 7px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .followers {
+    color: $light-font;
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 0.4rem;
+  }
+
+  .growth {
+    svg {
+      margin-right: 6px;
+    }
+    display: flex;
+    align-items: center;
+    color: $green-color;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 30px 3px 20px 3px;
+  }
+}
+
+.sub-header {
+  padding: 0 300px 15px;
+}
+
+.small-cards-container {
+  padding: 10px 300px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .small-card {
+    background-color: $card-color;
+    width: 300px;
+    height: 140px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    &:hover {
+      background-color: $card-active-color;
+      cursor: pointer;
+    }
+    .row-one {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: $light-font;
+      }
+    }
+    .row-two {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      svg {
+        margin-right: 6px;
+      }
+      p {
+        display: flex;
+        align-items: center;
+        color: $green-color;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
