@@ -1,0 +1,86 @@
+@import 'variables';
+
+.cards-container {
+  padding: $default-padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .card {
+    background-color: $card-color;
+    padding: 0px 80px;
+    width: 300px;
+    // height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $card-active-color;
+      cursor: pointer;
+    }
+
+    &.fb {
+      border-top: 3px solid #178ff5;
+    }
+
+    &.tw {
+      border-top: 3px solid #1da1f2;
+    }
+
+    &.ig {
+      // Can I add radius to a gradient border ?
+      border-top: 3px solid;
+      border-image: linear-gradient(90deg,
+          rgb(248, 233, 100),
+          rgb(209, 34, 180)) 1;
+    }
+
+    &.yt {
+      border-top: 3px solid #c4032b;
+
+      .growth {
+        color: $red-color;
+      }
+    }
+
+    .social-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 20px 0;
+
+      p {
+        color: $light-font;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 0 7px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .followers {
+    color: $light-font;
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 0.4rem;
+  }
+
+  .growth {
+    svg {
+      margin-right: 6px;
+    }
+
+    display: flex;
+    align-items: center;
+    color: $green-color;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 30px 3px 20px 3px;
+  }
+}

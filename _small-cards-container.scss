@@ -1,0 +1,77 @@
+@import 'variables';
+
+.sub-header {
+  padding: 0 300px;
+}
+
+.small-cards-container {
+  padding: 10px 300px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .small-card {
+    background-color: $card-color;
+    width: 300px;
+    height: 140px;
+    padding: 25px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $card-active-color;
+      cursor: pointer;
+    }
+
+    .row-one {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: $light-font;
+      }
+    }
+
+    .row-two {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      svg {
+        margin-right: 6px;
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        color: $green-color;
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+    }
+
+    &.fb:nth-of-type(2) {
+      .row-two {
+        p {
+          color: $red-color;
+        }
+      }
+    }
+
+    &.yt {
+      .row-two {
+        p {
+          color: $red-color;
+        }
+      }
+    }
+  }
+}

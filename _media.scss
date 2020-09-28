@@ -1,0 +1,46 @@
+@import 'variables';
+
+@media only screen and (max-width: 600px) {
+  .top {
+    padding: 20px 25px 0;
+    flex-direction: column;
+
+    .top-title {
+      margin-bottom: 20px;
+    }
+
+    .toggle-button {
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+    }
+
+    .line-breaker {
+      height: 1px;
+      background-color: $light-font;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+  }
+
+  .cards-container,
+  .small-cards-container {
+    width: 70vw;
+    padding: 20px 10px 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card,
+  .small-card {
+    margin: 0 5px 30px;
+    width: 200px;
+  }
+
+  .sub-header {
+    padding: 20px 5px 10px;
+  }
+}

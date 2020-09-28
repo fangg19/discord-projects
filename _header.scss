@@ -1,0 +1,70 @@
+@import 'variables';
+
+.top {
+  padding: 60px 300px 0;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    color: $light-font;
+    font-weight: bold;
+  }
+
+  .toggle-button {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 15px;
+    }
+
+    .switch {
+      position: relative;
+      display: block;
+      width: 63px;
+      height: 30px;
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(60deg, rgb(30, 63, 94), rgb(8, 211, 160));
+        border-radius: 50px;
+        transition: 0.5s;
+
+        &:before {
+          position: absolute;
+          content: '';
+          // bottom: 14px;
+          top: 2px;
+          left: 3px;
+          background-color: $bg-color;
+          transition: 0.5s;
+        }
+
+        &.round:before {
+          width: 26px;
+          height: 26px;
+          border-radius: 50px;
+        }
+      }
+
+      input {
+        display: none;
+
+        &:checked+.slider {
+          background: linear-gradient(-60deg,
+              rgb(30, 63, 94),
+              rgb(8, 211, 160));
+        }
+
+        &:checked+.slider:before {
+          transform: translateX(31px);
+        }
+      }
+    }
+  }
+}

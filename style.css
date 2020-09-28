@@ -9,6 +9,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: #1d2029;
   color: #ccc;
+  width: 100vw;
+  height: 100vh;
 }
 
 .top {
@@ -36,7 +38,7 @@ body {
 }
 
 .top .toggle-button p {
-  padding: 0 15px;
+  margin-right: 15px;
 }
 
 .top .toggle-button .switch {
@@ -103,8 +105,8 @@ body {
 
 .cards-container .card {
   background-color: #252b43;
+  padding: 0px 80px;
   width: 300px;
-  height: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,7 +198,7 @@ body {
 }
 
 .sub-header {
-  padding: 0 300px 15px;
+  padding: 0 300px;
 }
 
 .small-cards-container {
@@ -210,6 +212,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .small-cards-container .small-card {
@@ -217,6 +221,7 @@ body {
   width: 300px;
   height: 140px;
   padding: 25px;
+  margin: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,5 +284,63 @@ body {
   color: #3dbea8;
   font-weight: bold;
   font-size: 0.8rem;
+}
+
+.small-cards-container .small-card.fb:nth-of-type(2) .row-two p {
+  color: #c4032b;
+}
+
+.small-cards-container .small-card.yt .row-two p {
+  color: #c4032b;
+}
+
+@media only screen and (max-width: 600px) {
+  .top {
+    padding: 20px 25px 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .top .top-title {
+    margin-bottom: 20px;
+  }
+  .top .toggle-button {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .top h1 {
+    font-size: 1.1rem;
+  }
+  .top .line-breaker {
+    height: 1px;
+    background-color: #9299bc;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+  .cards-container,
+  .small-cards-container {
+    width: 70vw;
+    padding: 20px 10px 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card,
+  .small-card {
+    margin: 0 5px 30px;
+    width: 200px;
+  }
+  .sub-header {
+    padding: 20px 5px 10px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
